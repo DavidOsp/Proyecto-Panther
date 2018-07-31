@@ -1,0 +1,197 @@
+
+<div>
+  <ul class="menu" >
+
+  <li >  <button class="button" (click)="setTab(1)" > <a > Actividades de alistamiento </a> </button></li>
+
+  <li >  <button class="button"(click)="setTab(2)" > <a    > Actividades de Inicio </a></button></li>
+
+  <li > <button class="button" (click)="setTab(3)" > <a   > Actividades de desarrollo</a> </button> </li>
+
+  <li ><button class="button" (click)="setTab(4)"> <a  > Actividades de cierre </a> </button> </li>
+
+</ul>
+
+      <div class="modulos">
+
+              <div id="tab0" *ngIf="getTab()== null">
+                 <br>
+                 <h5> Seleccione una actividad para visualizar el contenido... </h5>
+              </div>
+
+<!--                                            Lista del Modulo de alistamiento                                              -->
+
+              <div *ngIf="getTab()== 1">
+                <div class="card-body table-responsive">
+                    <table class="table table-hover">
+                        <table class="table table-bordered table-hover table-striped " style="border-color:black;">
+                          <thead>
+                            <tr>
+                              <th >Actividades Y Sugerencias</th>
+                              <th >Realizada</th>
+                              <th >Descripcion</th>
+                              <th >Adjunto</th>
+                            </tr>
+                          </thead>
+                          <tbody  *ngFor="let pregunta of preguntas" >
+                            <tr  *ngIf=" pregunta.id_Modulo == 1" >
+                              <td class="enunciado" >{{ pregunta.enunciado }}</td>
+                              <td class="respuesta">
+                              <ul class="respuestas">
+                                    <li>
+                                      <br>
+                                      <input type="checkbox" name="si" value="si">
+                                    </li>
+                                  </ul>
+                              </td>
+                              <td class="descripcion" >{{ pregunta.descripcion }} </td>
+
+                              <td class="adjunto" *ngIf="pregunta.adjunto == null ">
+                                {{pregunta.adjunto}}
+
+                              </td>
+                              <td class="adjunto" *ngIf="pregunta.adjunto">
+                                <form  action="{{pregunta.adjunto}}" target="_blank" >
+                                <input type="submit" value="Ver formato ">
+                                </form>
+                              </td>
+                            </tr>
+                          </tbody>
+                        </table>
+                    </table>
+                  </div>
+              </div>
+
+<!--                                            Lista del Modulo de inicio                                              -->
+
+              <div *ngIf="getTab()== 2">
+                <div class="card-body table-responsive">
+                    <table class="table table-hover">
+                        <table class="table table-bordered table-hover table-striped " style="border-color:black;">
+                          <thead>
+                            <tr>
+                              <th >Actividades Y Sugerencias</th>
+                              <th >Realizada</th>
+                              <th >Descripcion</th>
+                              <th >Adjunto</th>
+                            </tr>
+                          </thead>
+                          <tbody  *ngFor="let pregunta of preguntas" >
+                            <tr  *ngIf=" pregunta.id_Modulo == 2" >
+                              <td class="enunciado" >{{ pregunta.enunciado }}</td>
+                              <td class="respuesta">
+                              <ul class="respuestas">
+                                    <li>
+                                    <br>
+                                    <input type="checkbox" name="si" value="si">
+                                    </li>
+                                  </ul>
+                              </td>
+                              <td class="descripcion" >{{ pregunta.descripcion }}</td>
+
+                              <td class="adjunto" *ngIf="pregunta.adjunto == null ">
+                                {{pregunta.adjunto}}
+
+                              </td>
+                              <td class="adjunto" *ngIf="pregunta.adjunto">
+                                <form  action="{{pregunta.adjunto}}" target="_blank" >
+                                <input type="submit" value="Ir al sitio">
+                                </form>
+                              </td>
+                            </tr>
+                          </tbody>
+                        </table>
+                    </table>
+                  </div>
+              </div>
+
+<!--                                            Lista del Modulo de desarrollo                                              -->
+
+              <div *ngIf="getTab()== 3">
+                <div class="card-body table-responsive">
+                    <table class="table table-hover">
+                        <table class="table table-bordered table-hover table-striped " style="border-color:black;">
+                          <thead>
+                            <tr>
+                              <th >Actividades Y Sugerencias</th>
+                              <th >Realizada</th>
+                              <th >Descripcion</th>
+                              <th >Adjunto</th>
+                            </tr>
+                          </thead>
+                          <tbody  *ngFor="let pregunta of preguntas" >
+                            <tr  *ngIf=" pregunta.id_Modulo == 3" >
+                              <td class="enunciado" >{{ pregunta.enunciado }}</td>
+                              <td class="respuesta">
+                              <ul class="respuestas">
+                                    <li>
+                                    <br>
+                                      <input type="checkbox" name="si" value="si">
+                                    </li>
+                                  </ul>
+                              </td>
+                              <td class="descripcion" >{{ pregunta.descripcion }}</td>
+
+                              <td class="adjunto" *ngIf="pregunta.adjunto == null ">
+                                {{pregunta.adjunto}}
+
+                              </td>
+                              <td class="adjunto" *ngIf="pregunta.adjunto">
+                                <form  action="{{pregunta.adjunto}}" target="_blank" >
+                                <input type="submit" value="Ir al sitio">
+                                </form>
+                              </td>
+                            </tr>
+                          </tbody>
+                        </table>
+                    </table>
+                  </div>
+              </div>
+
+
+<!--                                            Lista del Modulo de cierre                                              -->
+
+              <div *ngIf="getTab()== 4">
+                <div class="card-body table-responsive">
+                    <table class="table table-hover">
+                        <table class="table table-bordered table-hover table-striped " style="border-color:black;">
+                          <thead>
+                            <tr>
+                              <th >Actividades Y Sugerencias</th>
+                              <th >Realizada</th>
+                              <th >Descripcion</th>
+                              <th >Adjunto</th>
+                            </tr>
+                          </thead>
+                          <tbody  *ngFor="let pregunta of preguntas" >
+                            <tr  *ngIf=" pregunta.id_Modulo == 4" >
+                              <td class="enunciado" >{{ pregunta.enunciado }}</td>
+                              <td class="respuesta">
+                              <ul class="respuestas">
+                                    <li>
+                                    <br>
+                                      <input type="checkbox" name="si" value="si">
+                                    </li>
+                                  </ul>
+                              </td>
+                              <td class="descripcion" >{{ pregunta.descripcion }}</td>
+
+                              <td class="adjunto" *ngIf="pregunta.adjunto == null ">
+                                {{pregunta.adjunto}}
+
+                              </td>
+                              <td class="adjunto" *ngIf="pregunta.adjunto">
+                                <form  action="{{pregunta.adjunto}}" target="_blank" >
+                                <input type="submit" value="Ir al sitio">
+                                </form>
+                              </td>
+                            </tr>
+                          </tbody>
+                        </table>
+                    </table>
+                  </div>
+              </div>
+
+      </div>
+
+</div>
