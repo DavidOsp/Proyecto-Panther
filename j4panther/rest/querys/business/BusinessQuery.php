@@ -15,4 +15,7 @@ define("UPDATE_PERSON", "UPDATE person SET name=?, lastName =? , phone=? WHERE i
 define("INTSERT_PREGUNTA", "INSERT INTO pregunta (enunciado, respuesta, id_modulo) VALUES (?,?,?);");
 define("UPDATE_PREGUNTA", "UPDATE pregunta SET enunciado=?, respuesta =? , id_modulo=? WHERE id=? ;");
 
+define("INTSERT_MODULO", "INSERT INTO pregunta (nombre, descripcion) VALUES (?,?,?);");
+define("UPDATE_MODULO", "UPDATE pregunta SET nombre=?, descripcion =?  WHERE id=? ;");
+
 ?>

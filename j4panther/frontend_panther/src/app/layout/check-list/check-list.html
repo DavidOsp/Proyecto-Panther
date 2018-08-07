@@ -1,5 +1,8 @@
 
 <div>
+
+<h1>Proyecto Panther</h1>
+
   <ul class="menu" >
 
   <li >  <button class="button" (click)="setTab(1)" > <a > Actividades de alistamiento </a> </button></li>
@@ -22,6 +25,11 @@
 <!--                                            Lista del Modulo de alistamiento                                              -->
 
               <div *ngIf="getTab()== 1">
+
+                <div *ngFor="let modulo of modulos">
+                  <p *ngIf="modulo.id == 1" class="alert alert-info" >{{modulo.descripcion}}</p>
+                </div>
+
                 <div class="card-body table-responsive">
                     <table class="table table-hover">
                         <table class="table table-bordered table-hover table-striped " style="border-color:black;">
@@ -39,8 +47,12 @@
                               <td class="respuesta">
                               <ul class="respuestas">
                                     <li>
+                                      <label id="no">NO / SI</label>
                                       <br>
-                                      <input type="checkbox" name="si" value="si">
+                                        <label class="switch">
+                                          <input type="checkbox">
+                                            <span class="slider round"> </span>
+                                        </label>
                                     </li>
                                   </ul>
                               </td>
@@ -65,6 +77,11 @@
 <!--                                            Lista del Modulo de inicio                                              -->
 
               <div *ngIf="getTab()== 2">
+
+                <div *ngFor="let modulo of modulos">
+                  <p *ngIf="modulo.id == 2" class="alert alert-info" >{{modulo.descripcion}}</p>
+                </div>
+
                 <div class="card-body table-responsive">
                     <table class="table table-hover">
                         <table class="table table-bordered table-hover table-striped " style="border-color:black;">
@@ -82,8 +99,12 @@
                               <td class="respuesta">
                               <ul class="respuestas">
                                     <li>
-                                    <br>
-                                    <input type="checkbox" name="si" value="si">
+                                      <label id="no">NO / SI</label>
+                                      <br>
+                                        <label class="switch">
+                                          <input type="checkbox">
+                                            <span class="slider round"> </span>
+                                        </label>
                                     </li>
                                   </ul>
                               </td>
@@ -108,6 +129,12 @@
 <!--                                            Lista del Modulo de desarrollo                                              -->
 
               <div *ngIf="getTab()== 3">
+
+                <div *ngFor="let modulo of modulos">
+                  <p *ngIf="modulo.id == 3" class="alert alert-info" >{{modulo.descripcion}}</p>
+                </div>
+
+
                 <div class="card-body table-responsive">
                     <table class="table table-hover">
                         <table class="table table-bordered table-hover table-striped " style="border-color:black;">
@@ -125,8 +152,12 @@
                               <td class="respuesta">
                               <ul class="respuestas">
                                     <li>
-                                    <br>
-                                      <input type="checkbox" name="si" value="si">
+                                      <label id="no">NO / SI</label>
+                                      <br>
+                                        <label class="switch">
+                                          <input type="checkbox">
+                                            <span class="slider round"> </span>
+                                        </label>
                                     </li>
                                   </ul>
                               </td>
@@ -152,6 +183,12 @@
 <!--                                            Lista del Modulo de cierre                                              -->
 
               <div *ngIf="getTab()== 4">
+
+                <div *ngFor="let modulo of modulos">
+                  <p *ngIf="modulo.id == 4" class="alert alert-info" >{{modulo.descripcion}}</p>
+                </div>
+
+
                 <div class="card-body table-responsive">
                     <table class="table table-hover">
                         <table class="table table-bordered table-hover table-striped " style="border-color:black;">
@@ -169,8 +206,12 @@
                               <td class="respuesta">
                               <ul class="respuestas">
                                     <li>
-                                    <br>
-                                      <input type="checkbox" name="si" value="si">
+                                      <label id="no">NO / SI</label>
+                                      <br>
+                                        <label class="switch">
+                                          <input type="checkbox">
+                                            <span class="slider round"> </span>
+                                        </label>
                                     </li>
                                   </ul>
                               </td>

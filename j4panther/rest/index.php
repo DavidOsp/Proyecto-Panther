@@ -33,6 +33,9 @@ require 'querys/business/BusinessQuery.php';
 require 'ctrl/business/Preguntas.php';
 require 'model/business/Pregunta.php';
 
+require 'ctrl/business/Modulos.php';
+require 'model/business/Modulo.php';
+
 // Preparar manejo de excepciones
 /**
  * *Formatos permitidos enviados por parametro

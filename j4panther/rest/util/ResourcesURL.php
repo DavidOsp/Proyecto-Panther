@@ -13,7 +13,8 @@ define("RESOURCES_URL", array(
     'roles',
     //Business
     'persons',
-    'preguntas'
+    'preguntas',
+    'modulos'
 ), TRUE);
 
 /**
