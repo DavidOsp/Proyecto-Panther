@@ -1,0 +1,56 @@
+
+
+
+
+<div id="MainTittle">
+<h1> Sección de reportes </h1>
+
+<p> En esta sección, usted podrá descargar y/o visualizar el reporte generado por el sistema  </p>
+</div>
+
+
+<div>
+
+    <ul class="menu" >
+
+        <li >  <button class="button" (click)="setTab(1)" > <a > Informe de actividades de alistamiento </a> </button></li>
+      
+        <li >  <button class="button"(click)="setTab(2)" > <a    > Informe de actividades de Inicio </a></button></li>
+      
+        <li > <button class="button" (click)="setTab(3)" > <a   > Informe de actividades de desarrollo</a> </button> </li>
+      
+        <li ><button class="button" (click)="setTab(4)"> <a  > Informe de actividades de cierre </a> </button> </li>
+      
+      </ul>
+
+
+</div>
+
+<div class="card-body table-responsive">
+    <table class="table table-hover">
+        <table class="table table-bordered table-hover table-striped " style="border-color:black;">
+          <thead>
+            <tr>
+              <th >Actividades Y Sugerencias</th>
+              <th >Cumplido</th>
+            </tr>
+          </thead>
+
+          <tbody>
+            <tr>
+              <td class="enunciado" >Hola mundo</td>
+              <td class="respuesta">
+              <ul class="respuestas">
+                    <li>
+                      <label id="no">NO / SI</label>
+                      <br>
+                    </li>
+                  </ul>
+              </td>
+            </tr>
+          </tbody>
+
+
+        </table>
+    </table>
+</div>          

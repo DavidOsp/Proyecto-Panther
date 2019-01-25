@@ -36,6 +36,8 @@ require 'model/business/Pregunta.php';
 require 'ctrl/business/Modulos.php';
 require 'model/business/Modulo.php';
 
+require 'ctrl/business/Fechas.php';
+require 'model/business/Fecha.php';
 // Preparar manejo de excepciones
 /**
  * *Formatos permitidos enviados por parametro

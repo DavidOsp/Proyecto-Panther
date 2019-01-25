@@ -6,7 +6,12 @@
         <a routerLink="/lista" [routerLinkActive]="['router-link-active']" class="list-group-item">
             <i class="fa fa-list"></i>&nbsp;{{ 'Formulario' | translate }}
         </a>
-
+        <a routerLink="/fechas" [routerLinkActive]="['router-link-active']" class="list-group-item">
+            <i class="fa fa-cog"></i>&nbsp;{{ 'Configuraciones' | translate }}
+        </a>
+        <a routerLink="/reportes" [routerLinkActive]="['router-link-active']" class="list-group-item">
+            <i class="fa fa-file"></i>&nbsp;{{ 'Generar Reportes' | translate }}
+        </a>
         <div class="header-fields">
             <a (click)="rltAndLtr()" class="list-group-item">
                 <span><i class="fa fa-arrows-h"></i>&nbsp; RTL/LTR</span>

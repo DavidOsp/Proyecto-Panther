@@ -17,13 +17,13 @@ export class CheckListComponent {
    public preguntas:Pregunta[];
    public modulos:Modulo[];
    public texto:string;
-   public tab:number;
+   public tab:number=1;
 
    constructor(
      private _PHService: AppService
    ){
 
-     this.texto='Hola Mundo desde CheckList!!'
+     
    }
 
   ngOnInit(){
@@ -32,7 +32,7 @@ export class CheckListComponent {
     this._PHService.getModulo().subscribe(
       resultado=>{
        this.modulos = resultado.data;
-       console.log(this.modulos);
+     
       },
       error=>{
         console.log(<any>error);
@@ -57,6 +57,6 @@ export class CheckListComponent {
 
     getTab(){
       return this.tab;
-    }s
+    }
 
 }

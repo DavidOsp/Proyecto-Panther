@@ -9,7 +9,9 @@ const routes: Routes = [
         children: [
             { path: '', redirectTo: 'usuarios', pathMatch: 'prefix' },
             { path: 'usuarios', loadChildren: './user/users.module#UsersModule' },
+            { path: 'fechas', loadChildren: './periodo-lectivo/periodo-lectivo.module#PeriodoLectivoModule' },
             { path: 'lista', loadChildren: './check-list/check-list.module#CheckListModule' },
+            { path: 'reportes', loadChildren: './generar-reporte/reportes.module#ReportesModule' },
         ]
     }
 ];

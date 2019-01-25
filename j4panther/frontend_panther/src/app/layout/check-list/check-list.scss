@@ -126,7 +126,7 @@ border:3px solid #ffffff;
 
 }
 
-// Todos los componentes de los botones
+// Todos los componentes de los botones switch
 
 
 /* dimenciones de la caja externa */
@@ -193,9 +193,4 @@ input:checked + .slider:before {
 .slider.round:before {
   border-radius: 50%;
 
-}
-
-
-#no{
-  text-align: left;
 }

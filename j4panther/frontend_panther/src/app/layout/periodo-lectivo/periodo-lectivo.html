@@ -1,0 +1,61 @@
+<h1>Configuraciones para inicio de semestre </h1>
+
+
+
+<form #formFecha="ngForm" (ngSubmit)="editarFechas()">
+<br>
+    <ul class="fecha">
+        <li>
+                <label for="">Fecha de inicio de semestre </label>
+                <br>
+                <input type="date" class="form-control"  name="fechaInicio" [(ngModel)]="data.fecha_inicio" required >
+        </li>
+        <br>
+        <li>
+                <label for="">Fecha de fin de semestre </label>
+                <br>
+                <input type="date" class="form-control" #fechaFin="ngModel" name="fechaFin" [(ngModel)]="data.fecha_final" required>
+        </li>
+        <br>
+        <li>
+            <div *ngIf="!formFecha.valid;then alert1 else alert0"></div> 
+                    <ng-template #alert1>
+                            <div class="alert alert-warning " role="alert" >
+                                    ATENCION! : Tenga en cuenta que al seleccionar una nueva fecha, esta modificará la 
+                                    fecha guardada anteriormente.
+                            </div>
+                    </ng-template>
+                    <ng-template #alert0>
+                            <div class="alert alert-danger " role="alert" >
+                                    ATENCION! : Tenga en cuenta que al seleccionar una nueva fecha, esta modificará la 
+                                    fecha guardada anteriormente, Presione Guardar para continuar.
+                            </div>
+                    </ng-template>
+            
+        </li>
+        <li>
+               <input (click)="alert()" type="submit"  value="Guardar" class="btn btn-success " [disabled]="!formFecha.valid"  > 
+
+               
+        </li>
+    </ul>
+       <h5 id="fecha-guardada">Fecha guardada</h5>
+       <table class="table  table-hover table-striped fechas" style="border-color:black;">
+        <thead>
+            <tr>
+              <th >Fecha de inicio:  </th>
+              <th >Fecha de fin</th>
+            </tr>
+        </thead>
+          <tbody>
+              <tr *ngFor=" let fecha of fechas" >
+                <td> {{fecha.fecha_inicio}} </td>
+                <td>{{fecha.fecha_final}}</td>
+              </tr>
+          </tbody>
+
+       </table>
+
+        <label>  </label> 
+</form>
+

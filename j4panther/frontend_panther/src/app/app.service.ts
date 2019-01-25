@@ -3,6 +3,7 @@ import { HttpClient } from '@angular/common/http';
 import { User } from './entities/user';
 import {Pregunta} from './entities/pregunta';
 import {Modulo} from './entities/modulo';
+import {Fecha} from './entities/fecha';
 import { Observable } from 'rxjs';
 import { HttpHeaders } from '@angular/common/http';
 import { Router } from '@angular/router';
@@ -21,6 +22,7 @@ export class AppService {
     private _urlUser = `${this._base}persons/`;
     private _urlPregunta= `${this._base}preguntas/`;
     private _urlModulo= `${this._base}modulos/`;
+    private _urlFecha= `${this._base}fechas/`;
 
   constructor(
     private http: HttpClient,
@@ -64,7 +66,26 @@ export class AppService {
         return this.http.get<Modulo[]>(this._urlModulo, httpOptions);
       }
 
+//  ----------- SERVICIO DE PARA VERIFICAR LA CONEXION A BASE DE DATOS DE LAS FECHAS
+
+        getFecha(): Observable<any>{
+        return this.http.get<Fecha[]>(this._urlFecha, httpOptions);
+        }
 
 
+        crearFecha(data,id) {
+          console.log('Metodo crear');
+          this.http.post<Fecha>(`${this._urlFecha}${id}`, data, httpOptions).subscribe(
+              () => { this.router.navigate(['/lista']); },
+          );
+        }
+
+        editarFecha(data,id) {
+          console.log('Metodo editar');
+          this.http.put<Fecha>(`${this._urlFecha}${id}`, data, httpOptions).subscribe(
+            () => {});
+        }
+       
+       
 
 }

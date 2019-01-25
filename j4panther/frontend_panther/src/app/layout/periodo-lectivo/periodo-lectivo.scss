@@ -1,0 +1,44 @@
+
+.contenedor{
+ 
+  border-style: solid;
+}
+
+
+.fecha{
+ padding-left: 100px;
+  list-style: none;
+}
+
+.fecha li {
+  border: 20px;
+}
+
+#fecha-guardada{
+  padding-top: 50px;
+  padding-left: 100px;
+  padding-bottom: 50px;
+}
+
+table{
+  display: inline-block;
+  padding-left: 100px;
+}
+
+.fechas th {
+  display: inline-block;
+  border-color: darkseagreen;
+  width: 250px;
+  border-style: solid;
+  margin-left: 25px;
+  
+}
+
+.fechas td {
+  display: inline-block;
+  border-color: darkseagreen;
+  width: 250px;
+  border-style: solid;
+  margin-left: 25px;
+  
+}
