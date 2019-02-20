@@ -12,6 +12,11 @@ import { AuthGuard } from './shared';
 import {FormsModule} from '@angular/forms';
 import {ReactiveFormsModule} from '@angular/forms';
 
+import { MatDatepickerModule, 
+         MatNativeDateModule,       
+         MatFormFieldModule 
+        
+        } from '@angular/material';
 
 
 
@@ -41,7 +46,13 @@ export const createTranslateLoader = (http: HttpClient) => {
         }),
         AppRoutingModule,
         FormsModule,
-        ReactiveFormsModule
+        ReactiveFormsModule,
+        MatDatepickerModule,
+        MatNativeDateModule,
+        MatFormFieldModule
+        
+
+    
         
     ],
     declarations: [AppComponent],

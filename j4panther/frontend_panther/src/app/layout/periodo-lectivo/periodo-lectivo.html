@@ -1,20 +1,32 @@
-<h1>Configuraciones para inicio de semestre </h1>
+<h1 id="titulo">Configuraciones para inicio de semestre </h1>
 
 
+                        <!--Inicio de formulario que almacena la fecha en el servidor-->
 
-<form #formFecha="ngForm" (ngSubmit)="editarFechas()">
+
+<form class="contenedor" #formFecha="ngForm" (ngSubmit)="editarFechas()" >
 <br>
     <ul class="fecha">
         <li>
                 <label for="">Fecha de inicio de semestre </label>
                 <br>
-                <input type="date" class="form-control"  name="fechaInicio" [(ngModel)]="data.fecha_inicio" required >
+                        <mat-form-field class="form-control"  >
+                                <input matInput [min]="minDate1" [max]="maxDate1" [matDatepicker]="picker1" placeholder="Seleccionar fecha" #fechaInicio='ngModel' name="fechaInicio" [(ngModel)]="data.fecha_inicio" required >
+                                <mat-datepicker-toggle matSuffix [for]="picker1"></mat-datepicker-toggle>
+                                <mat-datepicker #picker1></mat-datepicker>
+                        </mat-form-field>
+                
         </li>
         <br>
         <li>
-                <label for="">Fecha de fin de semestre </label>
-                <br>
-                <input type="date" class="form-control" #fechaFin="ngModel" name="fechaFin" [(ngModel)]="data.fecha_final" required>
+             <label for="">Fecha de fin de semestre </label>
+              <br>
+                    <mat-form-field class="form-control"  >
+                       <input matInput [min]="minDate2" [max]="maxDate2" [matDatepicker]="picker2" placeholder="Seleccionar fecha"  #fechaFin="ngModel" name="fechaFin" [(ngModel)]="data.fecha_final" required >
+                           <mat-datepicker-toggle matSuffix [for]="picker2"></mat-datepicker-toggle>
+                           <mat-datepicker #picker2></mat-datepicker>
+                     </mat-form-field>
+                               
         </li>
         <br>
         <li>
@@ -34,28 +46,34 @@
             
         </li>
         <li>
-               <input (click)="alert()" type="submit"  value="Guardar" class="btn btn-success " [disabled]="!formFecha.valid"  > 
+               <button id="btn-fecha" onclick="document.location.reload()" (click)="alert()" type="submit" class="btn btn-secondary" [disabled]="!formFecha.valid"  >Guardar </button>
 
                
         </li>
     </ul>
-       <h5 id="fecha-guardada">Fecha guardada</h5>
-       <table class="table  table-hover table-striped fechas" style="border-color:black;">
-        <thead>
-            <tr>
-              <th >Fecha de inicio:  </th>
-              <th >Fecha de fin</th>
-            </tr>
-        </thead>
-          <tbody>
-              <tr *ngFor=" let fecha of fechas" >
-                <td> {{fecha.fecha_inicio}} </td>
-                <td>{{fecha.fecha_final}}</td>
-              </tr>
-          </tbody>
 
-       </table>
+                        <!--Inicio de tabla que proporciona la fecha guardada en el servidor-->
 
-        <label>  </label> 
+      <div id=tabla-fecha-guardada>
+
+                <h5 id="fecha-guardada">Fecha guardada</h5>
+                <table class="table  table-hover table-striped fechas" style="border-color:black;">
+                        <thead>
+                        <tr>
+                        <th >Fecha de inicio:  </th>
+                        <th >Fecha de fin</th>
+                        </tr>
+                        </thead>
+                        <tbody>
+                        <tr *ngFor=" let fecha of fechas" >
+                                <td> {{fecha.fecha_inicio}} </td>
+                                <td>{{fecha.fecha_final}}</td>
+                        </tr>
+                        </tbody>
+
+                </table>
+
+        </div>
+        
 </form>
 

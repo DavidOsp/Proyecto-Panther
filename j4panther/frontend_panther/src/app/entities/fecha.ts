@@ -1,6 +1,6 @@
 export class Fecha  {
   constructor(
-      public id: number = null,
+      public id: number ,
       public fecha_inicio:  Date ,
       public fecha_final:  Date,
       

@@ -1,6 +1,9 @@
 import { Component } from '@angular/core';
 import { routerTransition } from '../../router.animations';
 import { AppService } from '../../app.service';
+import {Pregunta} from '../../entities/pregunta';
+import {Modulo} from '../../entities/modulo';
+
 
 
 
@@ -13,21 +16,49 @@ import { AppService } from '../../app.service';
 })
 
 export class ReportesComponent {
-   public texto:string;
+   public preguntas:Pregunta[];
+   public modulos:Modulo[];
+   public tab:number=1;
    
 
    constructor(
      private _PHService: AppService
    ){
-
-     this.texto="componente de reportes Funcionando";
+    
    }
 
    ngOnInit(){
+
+
+    this._PHService.getModulo().subscribe(
+      resultado=>{
+       this.modulos = resultado.data;
      
-   }
+      },
+      error=>{
+        console.log(<any>error);
+      }
+    )
 
 
+    this._PHService.getPreguntas().subscribe(
+      resultado=>{
+       this.preguntas = resultado.data;
 
+      },
+      error=>{
+        console.log(<any>error);
+      }
+    )
+  }
+      // metodos que permiten asignar la pestaña de los modulos de preguntas
+    setTab(tab:number){
+      this.tab=tab;
+    }
 
+    getTab(){
+      return this.tab;
+    }
+
+  
   }

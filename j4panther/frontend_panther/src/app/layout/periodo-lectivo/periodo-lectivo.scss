@@ -1,17 +1,29 @@
+/*modulo de estilos css prefedinido de 'Angular Material', 
+es necesario para la utilizacion de los modulos sin problemas
+**/
+@import '@angular/material/prebuilt-themes/indigo-pink.css'; 
 
+                                                            
+#titulo{
+   margin-left: 15%;
+   margin-bottom: 60px;
+}
 .contenedor{
- 
-  border-style: solid;
+ padding-top: 60px;
 }
 
 
 .fecha{
  padding-left: 100px;
   list-style: none;
+  
+  width: 40%;
+  float: left;
 }
 
 .fecha li {
   border: 20px;
+  
 }
 
 #fecha-guardada{
@@ -27,7 +39,7 @@ table{
 
 .fechas th {
   display: inline-block;
-  border-color: darkseagreen;
+  border-color: #336886;
   width: 250px;
   border-style: solid;
   margin-left: 25px;
@@ -36,9 +48,29 @@ table{
 
 .fechas td {
   display: inline-block;
-  border-color: darkseagreen;
+  border-color: #336886;
   width: 250px;
   border-style: solid;
   margin-left: 25px;
   
+}
+
+#btn-fecha{
+  background-color    :#336886; 
+  margin-left: 30%;                               
+
+}
+
+.mat-icon-button{
+
+  background-color: blueviolet;
+}
+
+
+#tabla-fecha-guardada{
+
+  float: left;
+  
+ 
+
 }

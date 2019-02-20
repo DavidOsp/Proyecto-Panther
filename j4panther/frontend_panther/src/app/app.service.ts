@@ -73,7 +73,7 @@ export class AppService {
         }
 
 
-        crearFecha(data,id) {
+        crearFecha(data,id:number) {
           console.log('Metodo crear');
           this.http.post<Fecha>(`${this._urlFecha}${id}`, data, httpOptions).subscribe(
               () => { this.router.navigate(['/lista']); },

@@ -1,8 +1,34 @@
 
+
+
+// Inicio de la seccion Main-tittle
+
+
+#MainTittle h1{
+   text-align: center;
+   text-shadow: #666666;
+   font-weight: bolder;
+   font-family: 'Times New Roman', Times, serif;
+   margin-bottom: 10px;
+   margin-top: 60px;
+}
+  #MainTittle dfn {
+    margin-left: 50px;
+    text-shadow: #5b9214;
+  }
+
+
+// Fin de laseccion Main-tittle
+
+
+
+
 // Inicio del modulo de la botonera principal  
 .menu{
+    padding-top: 40px;
     padding-left: 150px;
     align-items: center;
+    
   }
   
   .menu, li{
@@ -10,6 +36,7 @@
     list-style: none;
     float: left;
     align-items: center;
+    
   }
   
   
@@ -29,7 +56,8 @@
         cursor              : pointer;                             /* Puntero del mouse que muestre una mano                                  */
         transform           : perspective(600px) translateZ(0px) rotateZ(0deg) rotateX(0deg); /* Perspectiva, rotación y posición por defecto */
         text-shadow         : 1px 1px 1px #666;                    /* Una ligera sombra gris para el texto */
-        background-color    :#336886;
+        background-color    :#336886;                                 
+        width               :200px;                                   /* Asigna un tamaño general para los botones*/
     }
   
   .button:focus {
@@ -44,3 +72,61 @@
   [class^='button']:hover, [class^='button']:active { border : 2px solid #64bf9c; }
   
 // fin del modulo de la botonera principal  
+
+// inicio de la pestaña descriptiva (tab0) en la que se indica alusuario seleccionar una pestaña
+
+#tab0{
+  text-align: center;
+  
+}
+
+// fin de la pestaña descriptiva (tab0)    
+
+
+
+// inicio de la configuracion de los modulos
+
+.modulos{
+
+  padding-top: 190px;
+
+}
+
+// fin de la configuracion de los modulos 
+
+
+
+// Inicio del contenedor del pdf 
+
+.card-body{
+  background-color: #a0a0a0;
+  border-radius: 25px;
+ 
+} 
+
+.card-body td, th, thead{
+  border-style: solid;
+  border-color: #000;
+}
+
+
+// fin del Contenedor del pdf
+
+// inicio boton descargar
+
+#btn-descargar{
+  margin-top: 25px;
+  width: 15%;
+  height: 50px;
+  background-color: #747373;
+  margin-left: 40%;
+}
+
+
+#btn-descargar:hover{
+  text-decoration-line: underline;
+  transform : perspective(600px) translateZ(-75px) rotateZ(-0.5deg) rotateX(-10deg); /* Creo el efecto de hundimiento para el botón */
+  }
+
+// fin boton descargar
+
