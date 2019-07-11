@@ -19,9 +19,9 @@ class User
     /**
      * Nombre de usuario
      *
-     * @var string user
+     * @var string user_name
      */
-    public $user;
+    public $user_name;
 
     /**
      * Contraseña de usuario
@@ -55,11 +55,11 @@ class User
     
     /**
      *
-     * @return the $user
+     * @return the $user_name
      */
-    public function getUser()
+    public function getUserName()
     {
-        return $this->user;
+        return $this->user_name;
     }
 
     /**
@@ -73,11 +73,11 @@ class User
 
     /**
      *
-     * @param string $user
+     * @param string $user_name
      */
-    public function setUser($user)
+    public function setUserName($user_name)
     {
-        $this->user = $user;
+        $this->user_name = $user_name;
     }
 
     /**

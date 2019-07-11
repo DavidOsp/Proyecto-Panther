@@ -38,6 +38,13 @@ require 'model/business/Modulo.php';
 
 require 'ctrl/business/Fechas.php';
 require 'model/business/Fecha.php';
+
+require 'ctrl/business/docentes.php';
+require 'model/business/docente.php';
+
+require 'ctrl/business/actividadesControladas.php';
+require 'model/business/actividadControlada.php';
+
 // Preparar manejo de excepciones
 /**
  * *Formatos permitidos enviados por parametro

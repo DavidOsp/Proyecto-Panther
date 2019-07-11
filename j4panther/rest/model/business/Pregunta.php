@@ -12,14 +12,14 @@ class Pregunta
     /**
      * Identificador de la clase
      *
-     * @var float Id
+     * @var number Id
      */
     public $id;
 
     /**
      * Enunciado pregunta
      *
-     * @var string user
+     * @var string enunciado
      */
     public $enunciado;
 

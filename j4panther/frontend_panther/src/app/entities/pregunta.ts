@@ -1,6 +1,6 @@
 export class Pregunta  {
   constructor(
-    public id: number = null,
+    public id: number = 0,
     public enunciado: string = '',
     public descripcion: string = '',
     public adjunto: string = '',

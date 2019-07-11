@@ -7,8 +7,8 @@ specialElementHandlers = {
 	}
 }
 margins = {
-    top: 50,
-    left: 60,
+    top: 0,
+    left: 55,
     width: 545
   };
 pdf.fromHTML(
@@ -24,5 +24,7 @@ pdf.fromHTML(
   	  //          this allow the insertion of new lines after html
         pdf.save('Reporte de Actividades.pdf');
       }
-  )		
+	)
+
+		
 }

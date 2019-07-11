@@ -1,262 +1,120 @@
+<!--                                            TITULO                                            -->
+<div id="MainTittle">
+  <h1>
+    SECCIÓN DE REPORTES
+  </h1>
+
+  <dfn> En esta sección, usted podrá descargar y/o visualizar
+    el reporte generado por el sistema
+  </dfn>
+</div>
 
 
-     <!--                                            TITULO                                            -->
-      <div id="MainTittle">
-          <h1> 
-            Sección de reportes   
-         </h1>
 
-          <dfn> En esta sección, usted podrá descargar y/o visualizar
-          el reporte generado por el sistema  
-          </dfn>
-      </div>
 
-     <!--                                            INICIO DEL MENU DE NAVEGACION                                            -->
+<!--                                            INICIO DE LA LISTA DE MODULOS                                            -->
+<div id="content" #content class="content">
 
-      <div>
-          <ul class="menu" >
+  <header>
+    <div id="descripcion">
 
-              <li >  <button class="button" (click)="setTab(1)" > <a > Reporte de actividades de alistamiento </a> </button></li>
-            
-              <li >  <button class="button"(click)="setTab(2)" > <a    > Reporte de actividades de Inicio </a></button></li>
-            
-              <li > <button class="button" (click)="setTab(3)" > <a   > Reporte de actividades de desarrollo</a> </button> </li>
-            
-              <li ><button class="button" (click)="setTab(4)"> <a  > Reporte de actividades de cierre </a> </button> </li>
-            
-            </ul>
-      </div>
-      
-      <!--                                            INICIO DE LA LISTA DE MODULOS                                            -->
 
-      <div id="HTMLtoPDF" >
-       
-        <div > 
-          <div class="modulos">
-        
-            <div id="tab0" *ngIf="getTab()== 0">
-              <br>
-              <br>
-              <h4 class="alert alert-info"> Por favor seleccione el módulo que desea visualizar</h4>
-            </div>
+      <img class="imagen" src="../../../assets/images/header.png" alt="">
 
-      <!--                                            Lista del Modulo de alistamiento                                              -->
+      <p id="p1">
+        Documento generado por el sistema.
+      </p>
+      <p id="p2">En el encontrará el informe que indica el progreso de las actividades docentes.</p>
 
-            <div *ngIf="getTab()== 1">
 
-              <div *ngFor="let modulo of modulos">
-                <p *ngIf="modulo.id == 1" class="alert alert-info" >{{modulo.descripcion}}</p>
+    </div>
+  </header>
+
+
+
+
+
+
+
+
+  <!--                                            LISTA DE REPORTE DE ACTIVIDADES                                              -->
+
+
+
+
+  <div class="card-body table-responsive">
+
+    <table class="table table-bordered table-hover table-striped " style="border-color:black;">
+
+      <thead>
+        <tr>
+
+          <div>
+            <th class="C-Enunciado">Actividades Y Sugerencias</th>
+            <th class="C-Modulo">Modulo de la actividad</th>
+            <th class="C-Progreso">Progreso % </th>
+          </div>
+
+
+
+        </tr>
+
+      </thead>
+
+      <tbody>
+        <tr>
+          <div *ngFor="let pregunta of preguntas">
+            <div *ngFor="let actividad of actividades">
+              <div *ngIf="pregunta.id == actividad.fk_id_pregunta">
+
+
+
+                <td>
+                  {{pregunta.enunciado}}
+                </td>
+
+                <td>
+                  <div *ngFor=" let modulo of modulos">
+                    <div *ngIf="modulo.id == actividad.fk_id_modulo">
+                      {{modulo.nombre}}
+                    </div>
+                  </div>
+                </td>
+
+
+                <td>
+                  <div class="container-fluid">
+                    <br>
+                    <div class="progress-bar progress-bar-striped active" role="progressbar" aria-valuenow="40"
+                      aria-valuemin="0" aria-valuemax="100" [style.width]="porcentaje">
+                      {{porcentaje}}
+                    </div>
+
+                  </div>
+                </td>
+
+
               </div>
-
-              <div class="card-body table-responsive">
-                  
-                      <table class="table table-bordered table-hover table-striped " style="border-color:black;">
-                        <thead>
-                          <tr>
-                            <th >Actividades Y Sugerencias</th>
-                            <th >Realizada</th>
-                            <th >Descripcion</th>
-                            <th >Adjunto</th>
-                          </tr>
-                        </thead>
-                        <tbody  *ngFor="let pregunta of preguntas" >
-                          <tr  *ngIf=" pregunta.id_Modulo == 1" >
-                            <td class="enunciado" >{{ pregunta.enunciado }}</td>
-                            <td class="respuesta">
-                            <ul class="respuestas">
-                                  <li>
-                                    <label id="no">NO / SI</label>
-                                    <br>
-                                      <label class="switch">
-                                        <input type="checkbox">
-                                          <span class="slider round"> </span>
-                                      </label>
-                                  </li>
-                                </ul>
-                            </td>
-                            <td class="descripcion" >{{ pregunta.descripcion }} </td>
-
-                            <td class="adjunto" *ngIf="pregunta.adjunto == null ">
-                              {{pregunta.adjunto}}
-
-                            </td>
-                            <td class="adjunto" *ngIf="pregunta.adjunto">
-                              <form  action="{{pregunta.adjunto}}" target="_blank" >
-                              <input type="submit" value="Ver formato ">
-                              </form>
-                            </td>
-                          </tr>
-                        </tbody>
-                      </table>
-                  
-                </div>
             </div>
+          </div>
+        </tr>
+      </tbody>
+    </table>
 
-      <!--                                            Lista del Modulo de inicio                                              -->
-
-            <div *ngIf="getTab()== 2">
-
-              <div *ngFor="let modulo of modulos">
-                <p *ngIf="modulo.id == 2" class="alert alert-info" >{{modulo.descripcion}}</p>
-              </div>
-
-              <div class="card-body table-responsive">
-                  
-                      <table class="table table-bordered table-hover table-striped " style="border-color:black;">
-                        <thead>
-                          <tr>
-                            <th >Actividades Y Sugerencias</th>
-                            <th >Realizada</th>
-                            <th >Descripcion</th>
-                            <th >Adjunto</th>
-                          </tr>
-                        </thead>
-                        <tbody  *ngFor="let pregunta of preguntas" >
-                          <tr  *ngIf=" pregunta.id_Modulo == 2" >
-                            <td class="enunciado" >{{ pregunta.enunciado }}</td>
-                            <td class="respuesta">
-                            <ul class="respuestas">
-                                  <li>
-                                    <label id="no">NO / SI</label>
-                                    <br>
-                                      <label class="switch">
-                                        <input type="checkbox">
-                                          <span class="slider round"> </span>
-                                      </label>
-                                  </li>
-                                </ul>
-                            </td>
-                            <td class="descripcion" >{{ pregunta.descripcion }}</td>
-
-                            <td class="adjunto" *ngIf="pregunta.adjunto == null ">
-                              {{pregunta.adjunto}}
-
-                            </td>
-                            <td class="adjunto" *ngIf="pregunta.adjunto">
-                              <form  action="{{pregunta.adjunto}}" target="_blank" >
-                              <input type="submit" value="Ir al sitio">
-                              </form>
-                            </td>
-                          </tr>
-                        </tbody>
-                      </table>
-                  
-                </div>
-            </div>
-
-      <!--                                            Lista del Modulo de desarrollo                                              -->
-
-            <div *ngIf="getTab()== 3">
-
-              <div *ngFor="let modulo of modulos">
-                <p *ngIf="modulo.id == 3" class="alert alert-info" >{{modulo.descripcion}}</p>
-              </div>
+  </div>
 
 
-              <div class="card-body table-responsive">
-                  
-                      <table class="table table-bordered table-hover table-striped " style="border-color:black;">
-                        <thead>
-                          <tr>
-                            <th >Actividades Y Sugerencias</th>
-                            <th >Realizada</th>
-                            <th >Descripcion</th>
-                            <th >Adjunto</th>
-                          </tr>
-                        </thead>
-                        <tbody  *ngFor="let pregunta of preguntas" >
-                          <tr  *ngIf=" pregunta.id_Modulo == 3" >
-                            <td class="enunciado" >{{ pregunta.enunciado }}</td>
-                            <td class="respuesta">
-                            <ul class="respuestas">
-                                  <li>
-                                    <label id="no">NO / SI</label>
-                                    <br>
-                                      <label class="switch">
-                                        <input type="checkbox">
-                                          <span class="slider round"> </span>
-                                      </label>
-                                  </li>
-                                </ul>
-                            </td>
-                            <td class="descripcion" >{{ pregunta.descripcion }}</td>
-
-                            <td class="adjunto" *ngIf="pregunta.adjunto == null ">
-                              {{pregunta.adjunto}}
-
-                            </td>
-                            <td class="adjunto" *ngIf="pregunta.adjunto">
-                              <form  action="{{pregunta.adjunto}}" target="_blank" >
-                              <input type="submit" value="Ir al sitio">
-                              </form>
-                            </td>
-                          </tr>
-                        </tbody>
-                      </table>
-                  
-                </div>
-            </div>
 
 
-      <!--                                            Lista del Modulo de cierre                                              -->
-
-            <div *ngIf="getTab()== 4">
-
-              <div *ngFor="let modulo of modulos">
-                <p *ngIf="modulo.id == 4" class="alert alert-info" >{{modulo.descripcion}}</p>
-              </div>
 
 
-              <div class="card-body table-responsive">
-                  
-                      <table class="table table-bordered table-hover table-striped " style="border-color:black;">
-                        <thead>
-                          <tr>
-                            <th >Actividades Y Sugerencias</th>
-                            <th >Realizada</th>
-                            <th >Descripcion</th>
-                            <th >Adjunto</th>
-                          </tr>
-                        </thead>
-                        <tbody  *ngFor="let pregunta of preguntas" >
-                          <tr  *ngIf=" pregunta.id_Modulo == 4" >
-                            <td class="enunciado" >{{ pregunta.enunciado }}</td>
-                            <td class="respuesta">
-                            <ul class="respuestas">
-                                  <li>
-                                    <label id="no">NO / SI</label>
-                                    <br>
-                                      <label class="switch">
-                                        <input type="checkbox">
-                                          <span class="slider round"> </span>
-                                      </label>
-                                  </li>
-                                </ul>
-                            </td>
-                            <td class="descripcion" >{{ pregunta.descripcion }}</td>
 
-                            <td class="adjunto" *ngIf="pregunta.adjunto == null ">
-                              {{pregunta.adjunto}}
 
-                            </td>
-                            <td class="adjunto" *ngIf="pregunta.adjunto">
-                              <form  action="{{pregunta.adjunto}}" target="_blank" >
-                              <input type="submit" value="Ir al sitio">
-                              </form>
-                            </td>
-                          </tr>
-                        </tbody>
-                      </table>
-                  
-                </div>
-            </div>
 
-      </div>
+  <footer>
+    <img src="../../../assets/images/footer.png">
+  </footer>
 
-        </div>
+</div>
 
-      </div>    
-        
-      <button class="btn btn-secondary" id="btn-descargar" onclick="HTMLtoPDF()" [disabled]="getTab()==0" >descargar PDF</button>
-
-        
+<button class="btn btn-secondary" class="button" (click)="imprimir()">descargar PDF</button>

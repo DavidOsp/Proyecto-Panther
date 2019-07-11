@@ -15,7 +15,9 @@ define("RESOURCES_URL", array(
     'persons',
     'preguntas',
     'modulos',
-    'fechas'
+    'fechas',
+    'docentes',
+    'actividadesControladas',
 ), TRUE);
 
 /**

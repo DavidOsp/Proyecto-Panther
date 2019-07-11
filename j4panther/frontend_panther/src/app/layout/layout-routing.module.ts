@@ -12,6 +12,7 @@ const routes: Routes = [
             { path: 'fechas', loadChildren: './periodo-lectivo/periodo-lectivo.module#PeriodoLectivoModule' },
             { path: 'lista', loadChildren: './check-list/check-list.module#CheckListModule' },
             { path: 'reportes', loadChildren: './generar-reporte/reportes.module#ReportesModule' },
+            
         ]
     }
 ];

@@ -12,7 +12,7 @@ class Modulo
     /**
      * Identificador de la clase
      *
-     * @var float Id
+     * @var number Id
      */
     public $id;
 

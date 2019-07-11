@@ -34,7 +34,7 @@ class Fechas extends Request
     {
         $statement->bindParam(1, $object->fecha_inicio);
         $statement->bindParam(2, $object->fecha_final);
-        
+     
 
     }
 

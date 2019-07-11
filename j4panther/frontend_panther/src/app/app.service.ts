@@ -7,6 +7,8 @@ import {Fecha} from './entities/fecha';
 import { Observable } from 'rxjs';
 import { HttpHeaders } from '@angular/common/http';
 import { Router } from '@angular/router';
+import {Docente} from './entities/docente';
+import { actividadesControladas } from './entities/actividadesControladas';
 
 const httpOptions = {
     headers: new HttpHeaders({
@@ -23,11 +25,45 @@ export class AppService {
     private _urlPregunta= `${this._base}preguntas/`;
     private _urlModulo= `${this._base}modulos/`;
     private _urlFecha= `${this._base}fechas/`;
-
+    private _urlDocente = `${this._base}docentes`;
+    private _urlActividadesC = `${this._base}actividadesControladas`;
   constructor(
     private http: HttpClient,
     private router: Router
   ) {}
+
+
+//  ----------- INICIO SERVICIO DE LOGIN Y REGISTRO DE USUARIOS EN LA PAGINA 
+
+    loginUser(email): Observable<Docente[]> {
+        return this.http.get<Docente[]>(`${this._urlDocente}${email}`);
+      }
+    
+
+    registerUser(data) {
+      this.http.post<Docente[]>(`${this._urlDocente}`, data, httpOptions).subscribe(
+          () => { },
+      );
+    }
+
+
+    
+    
+    
+
+//  -----------  FIN SERVICIO DE LOGIN Y REGISTRO DE USUARIOS EN LA PAGINA     
+
+//  -----------  INICIO DE SERVICIO DE PRUEBA DEREGISTRO DE USUARIOS EN LA PAGINA 
+/**
+ *  SERVICIO DE PRUEBA, DESCOMENTAR SI SE PRESENTAN FALLOS EN LOS USUARIOS DOCENTES PARA PRUEBAS DE CONEXION.
+ 
+    getDocentes(): Observable<any>{
+      return this.http.get<Docente[]>(this._urlDocente, httpOptions);
+    }
+ */  
+
+//  -----------  FIN DE SERVICIO DE PRUEBA DE REGISTRO DE USUARIOS EN LA PAGINA
+
 
   getUsers(): Observable<User[]> {
     return this.http.get<User[]>(this._urlUser, httpOptions);
@@ -87,5 +123,12 @@ export class AppService {
         }
        
        
+//  -----------  INICIO DEL SERVICIO DE PARA OBTENER LAS ACTIVIDADES CONTROLADAS
+
+        getActividades():Observable<any>{
+          return this.http.get<actividadesControladas[]>(this._urlActividadesC, httpOptions);
+        }
+
+//  ----------- FIN DEL SERVICIO DE PARA OBTENER LAS ACTIVIDADES CONTROLADAS
 
 }

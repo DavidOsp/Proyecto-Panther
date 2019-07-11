@@ -9,12 +9,16 @@
    text-shadow: #666666;
    font-weight: bolder;
    font-family: 'Times New Roman', Times, serif;
-   margin-bottom: 10px;
-   margin-top: 60px;
+   margin-bottom: 50px;
+   margin-top: 20px;
+   float: left;
+   margin-left: 10%;
 }
   #MainTittle dfn {
-    margin-left: 50px;
-    text-shadow: #5b9214;
+    float: left;
+    margin-left: 15%;
+    padding-bottom: 95px;
+    
   }
 
 
@@ -23,21 +27,6 @@
 
 
 
-// Inicio del modulo de la botonera principal  
-.menu{
-    padding-top: 40px;
-    padding-left: 150px;
-    align-items: center;
-    
-  }
-  
-  .menu, li{
-  
-    list-style: none;
-    float: left;
-    align-items: center;
-    
-  }
   
   
   
@@ -88,7 +77,7 @@
 
 .modulos{
 
-  padding-top: 190px;
+ 
 
 }
 
@@ -101,12 +90,14 @@
 .card-body{
   background-color: #a0a0a0;
   border-radius: 25px;
+  page-break-after: always;
  
 } 
 
-.card-body td, th, thead{
+.card-body td, thead{
   border-style: solid;
   border-color: #000;
+  
 }
 
 
@@ -115,7 +106,7 @@
 // inicio boton descargar
 
 #btn-descargar{
-  margin-top: 25px;
+  margin-top: 15%;
   width: 15%;
   height: 50px;
   background-color: #747373;
@@ -129,4 +120,72 @@
   }
 
 // fin boton descargar
+
+
+// inicio de imagenes institucionales 
+#descripcion {
+  opacity: 0;
+  position: fixed; top: 0%;
+ 
+}
+
+
+#p1 {
+ margin-top: 5%;
+ margin-bottom: 0%; 
+
+}
+
+.imagen{
+  margin-top: 0%;
+  margin-bottom: 5%;
+  margin-left: 0%;
+ 
+}
+
+footer{
+  opacity: 0;
+  
+}
+
+// fin de imagenes institucionales
+
+// Inicio animacion de las barras de progreso de actividades 
+.active{
+  animation: progress-bar-stripes 2s linear infinite;
+  background-color:#cc9a03;
+  font: bolder;
+  }
+
+// Fin animacion de las barras de progreso de actividades 
+
+
+// inicio de medidas de la tabla del documento PDF
+  .enunciado{
+    
+  }
+// Fin de medidas de la tabla del documento PDF
+
+
+// Inicio de medidas de las columnas y filas de la tabla
+
+
+
+
+td{
+ width: 352px;
+ text-align: justify;
+}
+
+th{
+  padding: 1%;
+  margin: 1%;
+  width: 352px;
+  text-align: center;
+  border-style: solid; 
+  border-color: #000;
+  
+}   
+
+// Fin de medidas de las columnas y filas de la tabla
 

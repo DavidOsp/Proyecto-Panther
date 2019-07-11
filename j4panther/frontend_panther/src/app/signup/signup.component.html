@@ -2,25 +2,38 @@
     <div class="row justify-content-md-center">
         <div class="col-md-4">
             <img class="user-avatar" src="assets/images/logo.png" width="150px" />
-            <h1>SB Admin BS4 Angular5</h1>
+            <h1>Plataforma HERGAD</h1>
             <form role="form">
                 <div class="form-content">
+                    
                     <div class="form-group">
-                        <input type="text" class="form-control input-underline input-lg" id="" placeholder="Full Name">
+                        <input type="text" class="form-control input-underline input-lg" id="" [(ngModel)]="docente.primer_nombre" name="primerNombre" placeholder="Primer nombre">
                     </div>
 
                     <div class="form-group">
-                        <input type="text" class="form-control input-underline input-lg" id="" placeholder="Email">
+                        <input type="text" class="form-control input-underline input-lg" id="" [(ngModel)]="docente.segundo_nombre" name="segundorNombre" placeholder="Segundo nombre">
+                    </div>
+                   
+                    <div class="form-group">
+                        <input type="text" class="form-control input-underline input-lg" id="" [(ngModel)]="docente.primer_apellido" name="primerApellido" placeholder="Primer apellido">
                     </div>
 
                     <div class="form-group">
-                        <input type="password" class="form-control input-underline input-lg" id="" placeholder="Password">
+                            <input type="text" class="form-control input-underline input-lg" id="" [(ngModel)]="docente.segundo_apellido" name="segundoApellido" placeholder="Segundo apellido">
+                        </div>
+    
+                    <div class="form-group">
+                        <input type="text" class="form-control input-underline input-lg" id="" [(ngModel)]="docente.email" name="email" placeholder="correo institucional">
+                    </div>
+                   
+                    <div class="form-group">
+                        <input type="password" class="form-control input-underline input-lg" id="" [(ngModel)]="docente.contrasena" name="contrasena" placeholder="Contraseña">
                     </div>
                     <div class="form-group">
-                        <input type="password" class="form-control input-underline input-lg" id="" placeholder="Repeat Password">
+                        <input type="password" class="form-control input-underline input-lg" id=""  placeholder="Repita la Contraseña">
                     </div>
                 </div>
-                <a class="btn rounded-btn" [routerLink]="['/dashboard']"> Register </a>&nbsp;
+                <a class="btn rounded-btn" (click)="registerUser()"  > Register </a>&nbsp;
                 <a class="btn rounded-btn" [routerLink]="['/login']"> Log in </a>
             </form>
         </div>
